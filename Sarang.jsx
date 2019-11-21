@@ -11,7 +11,7 @@ class Sarang extends Component{
       count : 0
     };
   }
-  handleChange(event){
+  handleChange = event => {
     this.setState({name : event.target.value});
   }
   handleButtonClicked(){
@@ -21,10 +21,10 @@ class Sarang extends Component{
 render(){
   return(
     <div>
-    <input  OnChange={(event) => this.handleChange(event)}/>
+    <input  onChange={() => this.handleChange(event)}/>
     <h1>Hello {this.state.name}!</h1>
-    <span class="badge badge-primary m-2">{this.state.count}</span>
-    <button onClick={(event) => this.handleButtonClicked()} class="btn btn-primary">Increment</button>
+    <span className="badge badge-primary m-2">{this.state.count}</span>
+    <button onClick={(event) => this.handleButtonClicked()} className="btn btn-primary">Increment</button>
     </div>
   );
 };

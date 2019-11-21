@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import Sarang from './Sarang';
+import Counters from './Counters';
 import "bootstrap/dist/css/bootstrap.css";
 
 class App extends Component {
@@ -24,4 +25,4 @@ class App extends Component {
   }
 }
 
-render(<Sarang />, document.getElementById('root'));
+render(<Counters />, document.getElementById('root'));
