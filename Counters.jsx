@@ -7,19 +7,24 @@ constructor(){
   super()
   this.state={
     counterList : [
-      {id:0, valueSet:4},
+      {id:0, valueSet:0},
       {id:1, valueSet:0},
-      {id:2, valueSet:40},
+      {id:2, valueSet:0},
       {id:3, valueSet:0},
       ]
   }
 };
 
+handleDelete =(clickedButtonNo)=>{
+    const counterList = this.state.counterList.filter(c=>c.id!=clickedButtonNo);
+    this.setState({counterList});
+  }
+
 render(){
   return(
     <div>
     {this.state.counterList.map(counter => 
-    <Counter key={counter.id} value={counter.valueSet} selected={true}/>)}
+    <Counter key={counter.id} onDelete={this.handleDelete} counterItem={counter}/>)}
     </div>
   )
 }
