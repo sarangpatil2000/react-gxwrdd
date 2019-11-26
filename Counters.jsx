@@ -16,10 +16,11 @@ constructor(){
 };
 
 
-onIncrement=(id)=>{
-  const newValue = this.state.counterList.filter(c=>c.id == id).valueSet+1;
-  this.state.counterList[id].valueSet = newValue;
-  this.setState({this.state.counterList});
+onIncrement=(counter)=>{
+  console.log(counter);
+  // const newValue = this.state.counterList.filter(c=>c.id == id).valueSet+1;
+  // this.state.counterList[id].valueSet = newValue;
+  // this.setState({this.state.counterList});
 }
 
 handleDelete =(clickedButtonNo)=>{
@@ -32,7 +33,7 @@ render(){
     <div>
     {this.state.counterList.map(counter => 
     <Counter key={counter.id} onDelete={this.handleDelete} counterItem={counter} value={counter.valueSet}
-    onIncrement={this.handleIncrement{counter.id}/>)}
+    onIncrement={this.handleIncrement}/>)}
     </div>
   )
 }
