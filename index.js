@@ -14,15 +14,11 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <Hello name={this.state.name} />
-        <p>
-          Start editing to see some magic happen :)
-        </p>
-        <button class="btn btn-primary">Submit</button>
-      </div>
+      <React.Fragment>
+        <Counters/>
+      </React.Fragment>
     );
   }
 }
 
-render(<Counters />, document.getElementById('root'));
+render(<App />, document.getElementById('root'));
