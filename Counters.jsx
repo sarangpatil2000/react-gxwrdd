@@ -30,6 +30,7 @@ handleDelete =(counter)=>{
 render(){
   return(
     <div>
+    <span className='badge badge-primary m-2'>{this.state.counterList.filter(c=>c.valueSet > 0).length}</span>
     {this.state.counterList.map(counter => 
     <Counter key={counter.id} counterItem={counter}
     onIncrement={this.handleIncrement}
