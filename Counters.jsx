@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {render} from 'react-dom';
 import Counter from './Counter';
+import NavBar from './NavBar';
 
 class Counters extends Component{
 constructor(){
@@ -29,13 +30,15 @@ handleDelete =(counter)=>{
 
 render(){
   return(
-    <div>
-    <span className='badge badge-primary m-2'>{this.state.counterList.filter(c=>c.valueSet > 0).length}</span>
+    <React.Fragment>
+    <NavBar number={this.state.counterList.filter(c=>c.valueSet > 0).length}/>
+    <main className="container">
     {this.state.counterList.map(counter => 
     <Counter key={counter.id} counterItem={counter}
     onIncrement={this.handleIncrement}
     onDelete={this.handleDelete}/>)}
-    </div>
+    </main>
+    </React.Fragment>
   )
 }
 }
