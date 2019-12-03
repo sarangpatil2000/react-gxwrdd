@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { render } from 'react-dom';
 import Sarang from './Sarang';
 import Counters from './Counters';
+import NavBar from './NavBar';
 import "bootstrap/dist/css/bootstrap.css";
 
 class App extends Component {
@@ -15,6 +16,7 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
+        <NavBar/>
         <Counters/>
       </React.Fragment>
     );
